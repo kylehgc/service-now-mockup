@@ -5,14 +5,7 @@ import flag from './assets/flag.jpg';
 import React from 'react';
 
 function App() {
-	const [radio, setRadio] = React.useState('');
-	const handleClick = (value: string) => {
-		if (value === radio) {
-			setRadio('');
-			return;
-		}
-		setRadio(value);
-	};
+	const [checkbox, setCheckbox] = React.useState('');
 	return (
 		<>
 			<div className="App">
@@ -68,33 +61,42 @@ function App() {
 							/>
 						</div>
 					</div>
-					<div className="form-check ml-1">
+					<div className="custom-control custom-radio custom-control-inline">
 						<input
 							name="radio"
 							id="radio_0"
-							onClick={() => handleClick('duck')}
-							type="checkbox"
-							defaultValue={'fish'}
-							className="form-check-input checkbox-1x"
-							checked={radio === 'duck'}
+							type="radio"
+							className="custom-control-input"
 							value="duck"
 						/>
-						<label htmlFor="radio_0" className="form-check-label mb-3">
-							Select this button if This is a MyBis, Sxe or AS400 Issue
+						<label htmlFor="radio_0" className="custom-control-label">
+							Select this button if this is a MyBis, Sxe or AS400 Issue
 						</label>
 					</div>
-					<div className="mb-2 form-check ml-1">
+
+					<div className="custom-control custom-radio custom-control-inline">
 						<input
-							checked={radio === 'fish'}
-							onClick={() => handleClick('fish')}
 							name="radio"
 							id="radio_1"
-							type="checkbox"
-							className="form-check-input checkbox-1x"
+							type="radio"
+							className="custom-control-input"
 							value="fish"
 						/>
-						<label htmlFor="radio_1" className="form-check-label mb-3">
-							Select this Button if this is an Ecom Issue.
+						<label htmlFor="radio_1" className="custom-control-label">
+							Select this Button if this is an Ecom Issue
+						</label>
+					</div>
+					<div className="mb-2 custom-control custom-radio custom-control-inline">
+						<input
+							name="radio"
+							id="radio_2"
+							type="radio"
+							className="custom-control-input"
+							value="other"
+							defaultChecked
+						/>
+						<label htmlFor="radio_2" className="active custom-control-label">
+							Other
 						</label>
 					</div>
 					<div className="m-group">
